@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_test/controller/controller.dart';
+import 'package:getx_test/1_Metodo_GetBuilder/controller/controller.dart';
 
 class SegundaTela extends StatelessWidget {
   final Controller ctrl = Get.find();
