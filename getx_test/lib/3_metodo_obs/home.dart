@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_test/1_Metodo_GetBuilder/controller/controller.dart';
-import 'package:getx_test/1_Metodo_GetBuilder/segundatela.dart';
+import 'package:getx_test/3_metodo_obs/controller/controller.dart';
+import 'package:getx_test/3_metodo_obs/segundatela.dart';
 
 class HomePage extends StatelessWidget {
   final controller = Get.put(Controller());
@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Contador: GetBuilder"),
+        title: const Text("Contador: OBS"),
       ),
       body: Center(
         child: Container(
@@ -26,14 +26,11 @@ class HomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 50),
-                  child: GetBuilder<Controller>(
-                      init: Controller(),
-                      builder: (_) => Text(
-                            "Valor: ${controller.counter}",
-                            style: const TextStyle(fontSize: 20),
-                          )),
-                ),
+                    padding: const EdgeInsets.only(bottom: 50),
+                    child: Obx(() => Text(
+                          "Valor: ${controller.counter}",
+                          style: const TextStyle(fontSize: 20),
+                        ))),
                 ElevatedButton(
                   onPressed: () {
                     Get.to(SegundaTela());

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_test/1_Metodo_GetBuilder/controller/controller.dart';
-import 'package:getx_test/1_Metodo_GetBuilder/segundatela.dart';
+import 'package:getx_test/2_metodo_getx/controller/controller.dart';
+import 'package:getx_test/2_metodo_getx/segundatela.dart';
 
 class HomePage extends StatelessWidget {
   final controller = Get.put(Controller());
@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Contador: GetBuilder"),
+        title: const Text("Contador: GetX"),
       ),
       body: Center(
         child: Container(
@@ -27,7 +27,7 @@ class HomePage extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(bottom: 50),
-                  child: GetBuilder<Controller>(
+                  child: GetX<Controller>(
                       init: Controller(),
                       builder: (_) => Text(
                             "Valor: ${controller.counter}",
